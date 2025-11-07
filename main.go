@@ -2,7 +2,13 @@ package main
 
 import "fmt"
 
-func main(){
+func main() {
 
-	fmt.Println("Hello, World!")
+	card := newcard()
+
+	fmt.Println(card)
+}
+
+func newcard() string {
+	return "Five of Diamonds"
 }
