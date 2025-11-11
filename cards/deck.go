@@ -47,6 +47,15 @@ func newDeckFromFile(filename string) deck {
 		// option 1: log the error and return a call to newDeck()
 		// option 2: log the error and entirely quit the program
 		fmt.Println("Error:", err)
-		return newDeck()
+		return NewDeck()
 	}
+	return deck(strings.Split(string(bs), ","))
+}
+
+func shuffle(d deck) deck {
+	bs, err := ioutil.ReadFile(filename)
+	if err != nil {
+		return NewDeck()
+	}
+	return newDeck()(strings.Split(string(bs), ","))
 }
